@@ -15,7 +15,8 @@ class MainActivity : ComponentActivity() {
                 // modifier = Modifier.fillMaxSize()
             ) {
                 //HelloWorld("Balablue")
-                VerticalScreen()
+               // VerticalScreen()
+                ListExample()
             }
             // HelloWorld("Balablue")
         }

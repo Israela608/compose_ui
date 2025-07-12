@@ -3,6 +3,8 @@ package com.lassafever.composeui
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -187,4 +189,15 @@ fun ImageComponent(){
 @Composable
 fun ImageComponentPreview(){
     ImageComponent()
+}
+
+@Composable
+fun MixLists(){
+    Column (
+        modifier = Modifier.background(Color.LightGray)
+    ){
+        HorizontalListExample()
+        Spacer(modifier = Modifier.height(20.dp))
+        ListExample()
+    }
 }

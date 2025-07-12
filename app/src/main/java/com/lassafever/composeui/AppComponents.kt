@@ -10,7 +10,9 @@ import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -30,7 +32,7 @@ fun HelloWorld(name: String) {
     TextComponent(
         value = "Hello $name",
         size = 36.sp,
-       // colorValue = Color.Magenta,
+        // colorValue = Color.Magenta,
         maxLinesValue = 4
     )
 }
@@ -54,7 +56,7 @@ fun HelloWorldPreviewInMobileScreen(nameValue: String = "Israel") {
 fun TextComponent(
     value: String,
     size: TextUnit = 18.sp,
-    colorValue: Color  = Color.Magenta,
+    colorValue: Color = Color.Magenta,
     fontWeightValue: FontWeight = FontWeight.Normal,
     fontStyleValue: FontStyle = FontStyle.Normal,
     maxLinesValue: Int? = null,
@@ -84,34 +86,61 @@ fun TextComponent(
 }
 
 @Composable
-fun SimpleButton(){
+fun SimpleButton() {
     Button(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth()
             .fillMaxWidth()
             .height(68.dp),
         onClick = {
             Log.d("SimpleButton", "Button Clicked!")
         },
         shape = RoundedCornerShape(12.dp)
-    ){
-        NormalTextForButtons("Click here")
+    ) {
+        NormalText("Click here", TextAlign.Center)
     }
 }
 
 @Preview
 @Composable
-fun SimpleButtonPreview(){
+fun SimpleButtonPreview() {
     SimpleButton()
 
 }
 
 @Composable
-fun NormalTextForButtons(value: String){
+fun NormalText(value: String, alignment: TextAlign = TextAlign.Start) {
     Text(
         modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp),
         text = value,
-        textAlign = TextAlign.Center,
+        textAlign = alignment,
     )
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun TextFieldComponent() {
+    var text = ""
+
+    TextField(
+        modifier = Modifier.fillMaxWidth(),
+        value = text,
+        onValueChange = { newText ->
+            text = newText
+        },
+        label = {
+            NormalText("Your name")
+        },
+        placeholder = {
+            NormalText("Please Enter your name")
+        }
+    )
+}
+
+@Preview
+@Composable
+fun TextFieldComponentPreview() {
+    TextFieldComponent()
 }

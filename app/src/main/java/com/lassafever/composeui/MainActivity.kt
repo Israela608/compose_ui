@@ -12,7 +12,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent() {
             Surface(
-                modifier = Modifier.fillMaxSize()
+                // modifier = Modifier.fillMaxSize()
             ) {
                 //HelloWorld("Balablue")
                 VerticalScreen()

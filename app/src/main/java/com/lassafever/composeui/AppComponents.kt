@@ -1,10 +1,13 @@
 package com.lassafever.composeui
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -76,3 +79,33 @@ fun TextComponent(
     )
 }
 
+@Composable
+fun SimpleButton(){
+    Button(
+        modifier = Modifier.fillMaxWidth()
+            .fillMaxWidth()
+            .height(68.dp),
+        onClick = {
+            Log.d("SimpleButton", "Button Clicked!")
+        },
+    ){
+        NormalTextForButtons("Click here")
+    }
+}
+
+@Preview
+@Composable
+fun SimpleButtonPreview(){
+    SimpleButton()
+
+}
+
+@Composable
+fun NormalTextForButtons(value: String){
+    Text(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(8.dp),
+        text = value
+    )
+}

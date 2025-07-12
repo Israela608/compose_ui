@@ -17,7 +17,7 @@ fun VerticalScreen() {
     Column(
         modifier = Modifier
             .wrapContentHeight()
-            .background(Color.Black)
+            //.background(Color.Black)
             .fillMaxWidth()
             .padding(18.dp),
         verticalArrangement = Arrangement.Center,
@@ -26,6 +26,7 @@ fun VerticalScreen() {
         TextComponent("Text 2")
         TextComponent("Text 3")
         TextComponent("Text 4")
+        SimpleButton()
     }
 }
 

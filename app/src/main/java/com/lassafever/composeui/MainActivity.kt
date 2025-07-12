@@ -14,7 +14,8 @@ class MainActivity : ComponentActivity() {
             Surface(
                 modifier = Modifier.fillMaxSize()
             ) {
-                HelloWorld("Balablue")
+                //HelloWorld("Balablue")
+                VerticalScreen()
             }
             // HelloWorld("Balablue")
         }

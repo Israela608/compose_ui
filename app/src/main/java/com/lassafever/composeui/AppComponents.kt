@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -22,7 +23,7 @@ fun HelloWorld(name: String) {
     TextComponent(
         value = "Hello $name",
         size = 36.sp,
-        colorValue = Color.Magenta,
+       // colorValue = Color.Magenta,
         maxLinesValue = 4
     )
 }
@@ -45,8 +46,8 @@ fun HelloWorldPreviewInMobileScreen(nameValue: String = "Israel") {
 @Composable
 fun TextComponent(
     value: String,
-    size: TextUnit,
-    colorValue: Color,
+    size: TextUnit = 18.sp,
+    colorValue: Color  = Color.Magenta,
     fontWeightValue: FontWeight = FontWeight.Normal,
     fontStyleValue: FontStyle = FontStyle.Normal,
     maxLinesValue: Int? = null,
@@ -58,6 +59,7 @@ fun TextComponent(
             //.fillMaxSize()
             .fillMaxWidth()
             //.wrapContentWidth(align = Alignment.Start)
+            //.wrapContentWidth()
             .wrapContentHeight(align = Alignment.Top)
             //.clip(shape = RoundedCornerShape(20.dp))
             .background(backgroundColor)

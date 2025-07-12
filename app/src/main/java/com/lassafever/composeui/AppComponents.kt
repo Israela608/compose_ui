@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
@@ -27,7 +26,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
@@ -148,7 +146,7 @@ fun TextFieldComponent() {
         onValueChange = { newText ->
             text = newText
         },
-        textStyle =  TextStyle(
+        textStyle = TextStyle(
             fontSize = 21.sp,
             fontWeight = FontWeight.Bold,
             fontStyle = FontStyle.Italic,
@@ -171,14 +169,14 @@ fun TextFieldComponentPreview() {
 }
 
 @Composable
-fun ImageComponent(){
+fun ImageComponent() {
     Image(
         modifier = Modifier
             .size(308.dp)
             .clip(CircleShape),
 //            .wrapContentHeight()
 //            .fillMaxWidth(),
-            //.background(Color.Black),
+        //.background(Color.Black),
         painter = painterResource(id = R.drawable.logo),
         contentDescription = "Channel Logo",
         contentScale = ContentScale.Crop,
@@ -187,15 +185,15 @@ fun ImageComponent(){
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun ImageComponentPreview(){
+fun ImageComponentPreview() {
     ImageComponent()
 }
 
 @Composable
-fun MixLists(){
-    Column (
+fun MixLists() {
+    Column(
         modifier = Modifier.background(Color.LightGray)
-    ){
+    ) {
         HorizontalListExample()
         Spacer(modifier = Modifier.height(20.dp))
         ListExample()
